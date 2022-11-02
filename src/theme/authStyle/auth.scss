@@ -1,0 +1,39 @@
+@import "../variables";
+.headerText {
+  font-size: 40px;
+  color: $blue_200;
+}
+
+.subHeaderText {
+  font-size: 14px;
+  color: $blue_200;
+}
+
+.form-label {
+  font-size: 12px;
+  color: $gray_200;
+}
+
+.form-control {
+  padding: 12px 16px !important;
+}
+
+::placeholder {
+  color: $gray_100 !important;
+}
+
+.input-field {
+  position: relative !important;
+}
+
+.icon-input-field {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  cursor: pointer;
+}
+
+.error-text {
+  font-size: 12px;
+  color: $red_500;
+}
