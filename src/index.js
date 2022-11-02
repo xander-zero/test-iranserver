@@ -13,6 +13,8 @@ import { store } from "./redux/store";
 import "./theme/_global.scss";
 // react bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+// react toastift
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

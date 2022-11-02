@@ -68,3 +68,9 @@
   color: $white;
   font-size: $size_200;
 }
+.bgLogo {
+  background-image: url("../../assets/images/login.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

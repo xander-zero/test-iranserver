@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
-  if ("admin" === username && "admin" === password) {
+  if ("admin@gmail.com" === username && "admin" === password) {
     res.send({
       success: true,
       data: token,

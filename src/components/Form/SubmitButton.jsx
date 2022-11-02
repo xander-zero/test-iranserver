@@ -7,7 +7,7 @@ const SubmitButton = ({ title }) => {
 
   return (
     <div>
-      <button onClick={handleSubmit} className="button-submit">
+      <button type="button" onClick={handleSubmit} className="button-submit">
         {title}
       </button>
     </div>

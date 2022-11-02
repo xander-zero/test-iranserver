@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const RememberMe = ({ label }) => {
   return (
     <div className="d-flex align-items-center justify-content-between w-full ">
-      <div class="form-check d-flex align-items-center flex-1">
+      <div className="form-check d-flex align-items-center flex-1">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           value=""
           id="flexCheckDefault"
         />
-        <label class="form-check-label" for="flexCheckDefault">
+        <label className="form-check-label" htmlFor="flexCheckDefault">
           {label}
         </label>
       </div>

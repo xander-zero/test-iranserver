@@ -9,7 +9,7 @@ const InputField = ({ name, ...otherProps }) => {
   const { handleChange, errors, touched, setFieldTouched } = useFormikContext();
 
   return (
-    <div class="mb-3 ">
+    <div className="mb-3 ">
       <InputControl
         {...otherProps}
         handleChange={handleChange(name)}

@@ -15,14 +15,14 @@ const InputControl = ({
 }) => {
   return (
     <>
-      <label for={placeholder} class="form-label mb-3">
+      <label htmlFor={placeholder} className="form-label mb-3">
         {title}
       </label>
       <div className="input-field">
         <input
           type={type}
           id={placeholder}
-          class="form-control"
+          className="form-control"
           placeholder={placeholder}
           onBlur={onBlur}
           onChange={handleChange}
