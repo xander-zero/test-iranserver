@@ -1,12 +1,14 @@
 import { useState } from "react";
+import CreateAccount from "../../components/Form/CreateAccount";
 import Form from "../../components/Form/Form";
 import HeaderForm from "../../components/Form/HeaderForm";
 import InputField from "../../components/Form/InputField";
+import RememberMe from "../../components/Form/RememberMe";
 
 import { schemaValidationAuth } from "../../schema/schemaValidation";
 
 const initialValue = {
-  username: "",
+  email: "",
   password: "",
 };
 
@@ -43,6 +45,8 @@ const Auth = () => {
                 isShowIcon={isShow}
                 name="password"
               />
+              <RememberMe label="برای دفعه ی بعدی مرا به خاطر بسپار" />
+              <CreateAccount />
             </Form>
           </div>
         </div>

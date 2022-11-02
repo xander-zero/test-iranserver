@@ -1,11 +1,11 @@
 @import "../variables";
 .headerText {
-  font-size: 40px;
+  font-size: $size_400;
   color: $blue_200;
 }
 
 .subHeaderText {
-  font-size: 14px;
+  font-size: $size_200;
   color: $blue_200;
 }
 
@@ -34,6 +34,37 @@
 }
 
 .error-text {
-  font-size: 12px;
+  font-size: $size_100;
   color: $red_500;
+}
+
+.forget-password {
+  color: $blue-100;
+  font-size: $size_100;
+}
+.form-check-input {
+  margin: 0px !important;
+}
+.form-check-label {
+  font-size: $size_100;
+  margin: 0 10px;
+}
+.create-account {
+  font-size: $size_200;
+  color: $blue_200 !important;
+
+  span > a {
+    text-decoration: underline !important;
+    color: $blue_100;
+  }
+}
+
+.button-submit {
+  background: $blue_100;
+  width: 72px;
+  height: 39px;
+  border-radius: 20px;
+  border: none;
+  color: $white;
+  font-size: $size_200;
 }
