@@ -67,7 +67,7 @@ const Auth = () => {
         </div>
       </div>
       <div className="col-md-4 bgLogo" style={{ backgroundColor: "red" }}>
-        <MainLogo />
+        <MainLogo color="#fff" />
       </div>
     </div>
   );

@@ -1,0 +1,10 @@
+@import "../variables";
+
+.sidebar {
+  width: 270px !important;
+  border-left: 1px solid $borderInput;
+}
+
+.sidebar-header {
+  border-bottom: 1px solid $borderInput;
+}
