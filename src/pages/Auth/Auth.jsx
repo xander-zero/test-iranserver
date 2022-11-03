@@ -30,7 +30,7 @@ const Auth = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/dashboard");
+      navigate("/dashboard/list-products");
     }
   }, [navigate]);
 

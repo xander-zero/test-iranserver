@@ -23,11 +23,26 @@
   padding: 1rem !important;
 }
 .menu-list-item {
-  margin: 0.5rem 0;
+  // margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: 0.4s all ease-in-out;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+.menu-list-item.active {
+  background-color: $blue_50;
 }
 
 .menu-list-item-link {
   color: $gray_200;
-  margin: 0.5rem;
   font-size: $size_200;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $gray_200;
+  }
 }

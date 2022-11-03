@@ -2,3 +2,18 @@
   height: 60px !important;
   border-bottom: 1px solid $borderInput;
 }
+.table {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.icon {
+  cursor: pointer;
+  margin: 0 5px;
+}
+.product-item {
+  font-size: $size_100;
+}
+.form-container {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  padding: 1rem;
+  border-radius: 10px;
+}
