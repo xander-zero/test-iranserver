@@ -1,10 +1,33 @@
 @import "../variables";
 
 .sidebar {
-  width: 270px !important;
+  width: 260px !important;
+  border-left: 1px solid $borderInput;
+  transition: 0.5s all ease-in-out;
+  transform: translateX(0px);
+}
+.sidebar.active {
+  width: 60px !important;
+  transform: translateX(0px);
   border-left: 1px solid $borderInput;
 }
 
 .sidebar-header {
   border-bottom: 1px solid $borderInput;
+  height: 60px;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem !important;
+}
+.menu-list-item {
+  margin: 0.5rem 0;
+}
+
+.menu-list-item-link {
+  color: $gray_200;
+  margin: 0.5rem;
+  font-size: $size_200;
 }
