@@ -17,7 +17,7 @@ import { closeModalEdit } from "../../redux/action/general";
 const ProductArchive = () => {
   const [header] = useState(tableData);
 
-  const { isOpenEditModal, productId } = useSelector((state) => state.general);
+  const { isOpenEditModal, product } = useSelector((state) => state.general);
 
   // declare dispatch
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const ProductArchive = () => {
         <EditModal
           show={isOpenEditModal}
           handleClose={() => dispatch(closeModalEdit())}
-          productId={productId}
+          product={product}
         />
       )}
     </div>

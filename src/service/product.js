@@ -16,6 +16,6 @@ export const deleteProduct = (productId) =>
 export const updateProduct = (productData, productId) =>
   API.put(productQuery.UPDATE_PRODICT, productData, {
     params: {
-      productId,
+      id: productId,
     },
   });

@@ -16,8 +16,8 @@ const Tbody = ({ products }) => {
     dispatch(removeProduct(productId));
   };
 
-  const handleEdit = (productId) => {
-    dispatch(openModalEdit(productId));
+  const handleEdit = (product) => {
+    dispatch(openModalEdit(product));
   };
 
   if (!products) {
@@ -26,33 +26,35 @@ const Tbody = ({ products }) => {
 
   return (
     <tbody>
-      {products.map((product, index) => (
-        <tr key={product?.id}>
-          <th className="product-item" scope="row">
-            {index + 1}
-          </th>
-          <td className="product-item">{product?.name}</td>
-          <td className="product-item">{separate(product?.price)}</td>
-          <td>
-            <div className="d-flex items-center">
-              <div className="icon mx-2">
-                <AiOutlineEdit
-                  size={15}
-                  color="blue"
-                  onClick={() => handleEdit(product?.id)}
-                />
+      {products.map((product, index) => {
+        return (
+          <tr key={index}>
+            <th className="product-item" scope="row">
+              {index + 1}
+            </th>
+            <td className="product-item">{product?.name}</td>
+            <td className="product-item">{separate(product?.price)}</td>
+            <td>
+              <div className="d-flex items-center">
+                <div className="icon mx-2">
+                  <AiOutlineEdit
+                    size={15}
+                    color="blue"
+                    onClick={() => handleEdit(product)}
+                  />
+                </div>
+                <div className="icon mx-2">
+                  <AiOutlineDelete
+                    size={15}
+                    color="red"
+                    onClick={() => handleDelete(product?.id)}
+                  />
+                </div>
               </div>
-              <div className="icon mx-2">
-                <AiOutlineDelete
-                  size={15}
-                  color="red"
-                  onClick={() => handleDelete(product?.id)}
-                />
-              </div>
-            </div>
-          </td>
-        </tr>
-      ))}
+            </td>
+          </tr>
+        );
+      })}
     </tbody>
   );
 };

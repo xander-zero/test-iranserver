@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ const initialValue = {
   imageUrl: "",
 };
 
-const EditModal = ({ show, handleClose, productId }) => {
+const EditModal = ({ show, handleClose, product }) => {
   const dispatch = useDispatch();
   const [form, setForm] = useState(initialValue);
 
@@ -22,8 +22,14 @@ const EditModal = ({ show, handleClose, productId }) => {
   };
 
   const handleSubmit = () => {
-    dispatch(updatedProduct(form, productId));
+    dispatch(updatedProduct(form, product.id));
   };
+
+  useEffect(() => {
+    if (product) {
+      setForm(product);
+    }
+  }, [product]);
 
   return (
     <Fragment>

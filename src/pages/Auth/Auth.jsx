@@ -24,7 +24,6 @@ const Auth = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (userData) => {
-    console.log("userData", userData);
     dispatch(signInUser(userData, navigate));
   };
 

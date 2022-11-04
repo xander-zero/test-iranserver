@@ -15,7 +15,6 @@ export const signInUser = (userData, router) => async (dispatch) => {
     router("/dashboard/list-products");
     successMessage("شما با موفقیت وارد شدید");
   } catch (error) {
-    console.log(error.response.data.data.message);
-    errorMessage("asd");
+    errorMessage(error.response.data.data.message);
   }
 };

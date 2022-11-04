@@ -2,6 +2,7 @@ import * as api from "../../service/product";
 
 import { errorMessage, successMessage } from "../../utils/message";
 import { productType } from "../types/product";
+import { closeModalEdit } from "./general";
 
 export const allProducts = () => async (dispatch) => {
   try {
@@ -42,9 +43,10 @@ export const removeProduct = (productId) => async (dispatch) => {
 export const updatedProduct = (productData, productId) => async (dispatch) => {
   try {
     const { data } = await api.updateProduct(productData, productId);
-    const result = data.data?.result;
+    const result = data.result;
     dispatch({ type: productType.UPDATE_PRODUCT, payload: result });
-    successMessage(data.message);
+    dispatch(closeModalEdit());
+    successMessage(data?.message);
   } catch (error) {
     errorMessage(error.response.data.data.message);
   }

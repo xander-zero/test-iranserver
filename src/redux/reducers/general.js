@@ -15,7 +15,7 @@ export const generalReducer = (
       return {
         ...state,
         isOpenEditModal: true,
-        productId: action.payload,
+        product: action.payload,
       };
 
     case generalTypes.CLOSE_MODAL_EDIT:

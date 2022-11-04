@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { addProduct } from "../../redux/action/product";
 
@@ -21,13 +21,6 @@ const AddProduct = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const locationPathname = useLocation();
-  const productId = locationPathname.search.split("=")[1];
-
-  const { products } = useSelector((state) => state.product);
-
-  const findProduct = products?.find((item) => item.id == productId);
-  console.log("findProduct", findProduct);
 
   const handleSubmit = (productData) => {
     dispatch(addProduct(productData, navigate));
