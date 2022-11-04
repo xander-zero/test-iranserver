@@ -1,16 +1,29 @@
-export const generalReducer = (state = { isShowSidebar: false }, action) => {
+import { generalTypes } from "../types/general";
+
+export const generalReducer = (
+  state = { isShowSidebar: false, isOpenEditModal: false },
+  action
+) => {
   switch (action.type) {
-    case "TOGGLE_SIDEBAR":
+    case generalTypes.TOGGLE_SIDEBAR:
       return {
         ...state,
         isShowSidebar: !state.isShowSidebar,
       };
 
-    // case "CLOSE_SIDEBAR":
-    //   return {
-    //     ...state,
-    //     isShowSidebar: false,
-    //   };
+    case generalTypes.OPEN_MODAL_EDIT:
+      return {
+        ...state,
+        isOpenEditModal: true,
+        productId: action.payload,
+      };
+
+    case generalTypes.CLOSE_MODAL_EDIT:
+      return {
+        ...state,
+        isOpenEditModal: false,
+        productId: "",
+      };
     default:
       return state;
   }

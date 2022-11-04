@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 import { addProduct } from "../../redux/action/product";
 
@@ -12,14 +13,24 @@ import SubmitButton from "../../components/Form/SubmitButton";
 const initialValue = {
   name: "",
   price: "",
+  imageUrl: "",
 };
 
 const AddProduct = () => {
   // declare dispatch
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+  const locationPathname = useLocation();
+  const productId = locationPathname.search.split("=")[1];
+
+  const { products } = useSelector((state) => state.product);
+
+  const findProduct = products?.find((item) => item.id == productId);
+  console.log("findProduct", findProduct);
+
   const handleSubmit = (productData) => {
-    dispatch(addProduct(productData));
+    dispatch(addProduct(productData, navigate));
   };
 
   return (
@@ -41,6 +52,12 @@ const AddProduct = () => {
             title="قیمت محصول"
             placeholder=""
             name="price"
+          />
+          <InputField
+            type="text"
+            title="لینک عکس"
+            placeholder=""
+            name="imageUrl"
           />
           <SubmitButton title="افزودن" />
         </Form>

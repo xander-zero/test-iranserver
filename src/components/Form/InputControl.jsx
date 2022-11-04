@@ -12,6 +12,8 @@ const InputControl = ({
   showIcon,
   onBlur,
   handleChange,
+  value,
+  defaultValue,
 }) => {
   return (
     <>
@@ -26,6 +28,8 @@ const InputControl = ({
           placeholder={placeholder}
           onBlur={onBlur}
           onChange={handleChange}
+          value={value}
+          defaultValue={defaultValue}
         />
         {icon && (
           <div className="icon-input-field" onClick={showIcon}>

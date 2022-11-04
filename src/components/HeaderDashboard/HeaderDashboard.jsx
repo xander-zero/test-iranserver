@@ -3,14 +3,14 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import Typography from "../../Common/Typography/Typography";
-import Dropdown from "./Dropdown/Dropdown";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { toggleSidebar } from "../../redux/action/general";
+import { userInfo } from "../../helper/userData";
 
 const HeaderDashboard = () => {
   const dispatch = useDispatch();
-
+  const userData = userInfo();
   return (
     <div className="header-dashboard d-flex items-center justify-content-between p-2">
       <div className="d-flex align-items-center">
@@ -26,7 +26,7 @@ const HeaderDashboard = () => {
         </div>
       </div>
       <div className="d-flex align-items-center">
-        <Dropdown />
+        <Typography>{userData?.email}</Typography>
       </div>
     </div>
   );

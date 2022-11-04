@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const schemaValidationAuth = Yup.object().shape({
-  username: Yup.string()
+  email: Yup.string()
     .required("پر کردن فیلد الزامی می باشد")
     .email("ایمیل معتبر نمی باشد"),
   password: Yup.string()

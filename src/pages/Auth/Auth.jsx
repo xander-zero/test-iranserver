@@ -13,7 +13,7 @@ import { signInUser } from "../../redux/action/auth";
 import { MainLogo } from "../../assets/icons/mainLogo";
 
 const initialValue = {
-  username: "",
+  email: "",
   password: "",
 };
 
@@ -24,6 +24,7 @@ const Auth = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (userData) => {
+    console.log("userData", userData);
     dispatch(signInUser(userData, navigate));
   };
 
@@ -49,7 +50,7 @@ const Auth = () => {
                 type="email"
                 title="نام کاربری"
                 placeholder="test@greenweb.ir"
-                name="username"
+                name="email"
               />
               <InputField
                 type={isShow ? "text" : "password"}

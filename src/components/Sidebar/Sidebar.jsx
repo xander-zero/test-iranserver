@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <div className={isShowSidebar ? "sidebar active" : "sidebar"}>
       <div className="sidebar-header d-flex align-items-center justify-content-center px-2">
-        {/* <MainLogo color="#2343A3" /> */}
+        {!isShowSidebar && <MainLogo color="#2343A3" />}
       </div>
       <ul className="menu-list">
         {sidebarData.map((item) => (
@@ -26,12 +26,17 @@ const Sidebar = () => {
                 : "menu-list-item"
             }
           >
-            {!isShowSidebar && (
-              <Link to={item.path_name} className="menu-list-item-link">
-                <div className="icon">{item.icon("#333")}</div>
-                {item.display_name}
-              </Link>
-            )}
+            <Link
+              to={item.path_name}
+              className={
+                isShowSidebar
+                  ? "menu-list-item-link active"
+                  : "menu-list-item-link"
+              }
+            >
+              <div className="icon">{item.icon("#333")}</div>
+              {!isShowSidebar && <>{item.display_name}</>}
+            </Link>
           </li>
         ))}
       </ul>

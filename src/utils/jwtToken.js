@@ -1,10 +1,8 @@
-import sign from "jwt-encode";
-import jwt_decode from "jwt-decode";
+import { API } from "../service/apiConfig";
 
-export const enCodeToken = (token) => {
-  return sign(token, "secret");
-};
-
-export const deCodeToken = (token) => {
-  return jwt_decode(token, { header: true });
+export const setToken = (token) => {
+  if (token) {
+    const auth = `Bearer ${token}`;
+    API.defaults.headers.common["Authorization"] = auth;
+  }
 };

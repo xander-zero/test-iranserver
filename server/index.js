@@ -65,44 +65,44 @@ app.get("/users/me", (req, res) => {
   });
 });
 
-app.get("/products", (req, res) => {
-  const { authorization } = req.headers;
+// app.get("/products", (req, res) => {
+//   const { authorization } = req.headers;
 
-  if (token === authorization) {
-    return res.send({
-      success: true,
-      data: products,
-    });
-  }
-  return res.send({
-    success: false,
-    error: "token is not valid",
-  });
-});
+//   if (token === authorization) {
+//     return res.send({
+//       success: true,
+//       data: products,
+//     });
+//   }
+//   return res.send({
+//     success: false,
+//     error: "token is not valid",
+//   });
+// });
 
-app.post("/add-product", (req, res) => {
-  const { authorization } = req.headers;
-  const { name, price } = req.body;
+// app.post("/add-product", (req, res) => {
+//   const { authorization } = req.headers;
+//   const { name, price } = req.body;
 
-  console.log("name", name);
-  console.log("price", price);
+//   console.log("name", name);
+//   console.log("price", price);
 
-  if (token === authorization) {
-    const newProduct = {
-      name,
-      price,
-      id: Math.floor(Math.random() * 1000),
-    };
-    return res.send({
-      success: true,
-      data: newProduct,
-    });
-  }
-  return res.send({
-    success: false,
-    error: "token is not valid",
-  });
-});
+//   if (token === authorization) {
+//     const newProduct = {
+//       name,
+//       price,
+//       id: Math.floor(Math.random() * 1000),
+//     };
+//     return res.send({
+//       success: true,
+//       data: newProduct,
+//     });
+//   }
+//   return res.send({
+//     success: false,
+//     error: "token is not valid",
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

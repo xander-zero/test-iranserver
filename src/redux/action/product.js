@@ -6,22 +6,46 @@ import { productType } from "../types/product";
 export const allProducts = () => async (dispatch) => {
   try {
     const { data } = await api.getProducts();
+    const result = data.result;
     dispatch({
       type: productType.GET_PRODUCTS,
-      payload: data.data,
+      payload: result,
     });
   } catch (error) {
     errorMessage("خطا در سرور");
   }
 };
 
-export const addProduct = (productData) => async (dispatch) => {
+export const addProduct = (productData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.insertProduct(productData);
-    console.log("data added", data);
-    dispatch({ type: productType.ADD_PRODUCT, payload: data });
+    const result = data.data?.result;
+    dispatch({ type: productType.ADD_PRODUCT, payload: result });
+    navigate("/dashboard/list-products");
     successMessage("محصول با موفقیت اضافه شد");
   } catch (error) {
     errorMessage("خطا در سرور");
+  }
+};
+
+export const removeProduct = (productId) => async (dispatch) => {
+  try {
+    const { data } = await api.deleteProduct(productId);
+    dispatch({ type: productType.DELETE_PRODUCT, payload: productId });
+    console.log("data", data);
+    successMessage(data.message);
+  } catch (error) {
+    errorMessage(error.response.data.data.message);
+  }
+};
+
+export const updatedProduct = (productData, productId) => async (dispatch) => {
+  try {
+    const { data } = await api.updateProduct(productData, productId);
+    const result = data.data?.result;
+    dispatch({ type: productType.UPDATE_PRODUCT, payload: result });
+    successMessage(data.message);
+  } catch (error) {
+    errorMessage(error.response.data.data.message);
   }
 };
