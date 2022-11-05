@@ -5,14 +5,18 @@ export const tableData = [
   },
   {
     id: "2",
-    name: "نام محصول",
+    name: "تصویر",
   },
   {
     id: "3",
-    name: "قیمت",
+    name: "نام محصول",
   },
   {
     id: "4",
+    name: "قیمت",
+  },
+  {
+    id: "5",
     name: "عملیات",
   },
 ];

@@ -32,7 +32,17 @@ const Tbody = ({ products }) => {
             <th className="product-item" scope="row">
               {index + 1}
             </th>
+            <td className="product-item">
+              <a href={product?.imageUrl} target="_blank" rel="noreferrer">
+                <img
+                  className="product-item-image"
+                  src={product?.imageUrl}
+                  alt={product?.name}
+                />
+              </a>
+            </td>
             <td className="product-item">{product?.name}</td>
+
             <td className="product-item">{separate(product?.price)}</td>
             <td>
               <div className="d-flex items-center">
