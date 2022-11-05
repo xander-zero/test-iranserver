@@ -36,10 +36,13 @@ const Auth = () => {
 
   return (
     <div className="row vh-100">
-      <div className="col-md-8 d-flex align-items-center justify-content-center">
-        <div className="flex flex-col w-50">
+      <div className="form-login col-md-8 d-flex align-items-center justify-content-center">
+        <div className="main-logo">
+          <MainLogo color="#2343A3" />
+        </div>
+        <div className="form-content flex flex-col ">
           <HeaderForm />
-          <div className="my-3">
+          <div className=" my-3">
             <Form
               initialValues={initialValue}
               onSubmit={(userData) => handleSubmit(userData)}
@@ -66,7 +69,10 @@ const Auth = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-4 bgLogo" style={{ backgroundColor: "red" }}>
+      <div
+        className="bgLogo col-md-4 col-12"
+        style={{ backgroundColor: "red" }}
+      >
         <MainLogo color="#fff" />
       </div>
     </div>
